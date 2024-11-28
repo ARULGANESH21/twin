@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Responses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stored Responses</h1>
+        <div id="responseList"></div>
+
+        <!-- Clear All Responses Button -->
+        <button id="clearButton" onclick="clearResponses()">Clear All Responses</button>
+    </div>
+
+    <script>
+        // Load responses from localStorage
+        const responses = JSON.parse(localStorage.getItem('responses')) || [];
+        const responseList = document.getElementById('responseList');
+
+        // Display responses
+        function displayResponses() {
+            responseList.innerHTML = ''; // Clear existing content
+
+            if (responses.length === 0) {
+                responseList.innerHTML = '<p>No responses found.</p>';
+            } else {
+                responses.forEach((response, index) => {
+                    const responseDiv = document.createElement('div');
+                    responseDiv.classList.add('response');
+                    responseDiv.innerHTML = `
+                        <h3>Response ${index + 1}</h3>
+                        <p><strong>Name:</strong> ${response.name}</p>
+                        <p><strong>Gender:</strong> ${response.gender}</p>
+                        <p><strong>Favorite Color:</strong> ${response.favColor}</p>
+                        <p><strong>Favorite Hero:</strong> ${response.favHero}</p>
+                        <p><strong>Favorite Heroine:</strong> ${response.favHeroine}</p>
+                        <p><strong>Favorite Place:</strong> ${response.favPlace}</p>
+                        <p><strong>Favorite Hobby:</strong> ${response.favHobby}</p>
+                        <p><strong>Favorite Food:</strong> ${response.favFood}</p>
+                    `;
+                    responseList.appendChild(responseDiv);
+                });
+            }
+        }
+
+        // Clear all responses
+        function clearResponses() {
+            if (confirm("Are you sure you want to clear all responses?")) {
+                localStorage.removeItem('responses'); // Clear localStorage
+                responses.length = 0; // Clear array
+                displayResponses(); // Update UI
+                alert("All responses have been cleared.");
+            }
+        }
+
+        // Display responses on page load
+        displayResponses();
+    </script>
+</body>
+</html>
+
+

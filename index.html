@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWIN FINDER😜</title>
+    <link rel="icon" href="TWIN.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body background="LUX PURPLE.avif">
+    <div class="container">
+        <h1>UR TWIN FINDER😜</h1>
+        <form id="responseForm" onsubmit="event.preventDefault(); storeResponse();">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="favColor">Favorite Color:</label>
+            <select id="favColor" required>
+                <option value="" disabled selected>Select</option>
+                <option value="BLUE">BLUE</option>
+                <option value="GREEN">GREEN</option>
+                <option value="PINK">PINK</option>
+                <option value="RED">RED</option>
+                <option value="YELLOW">YELLOW</option>
+            </select>
+
+            <label for="favHero">Favorite Hero:</label>
+            <select id="favHero" required>
+                <option value="" disabled selected>Select</option>
+                <option value="VIJAY">VIJAY</option>
+                <option value="AJITH">AJITH</option>
+                <option value="STR">STR</option>
+                <option value="SIVAKARTHIKEYAN">SIVAKARTHIKEYAN</option>
+                <option value="DHAUNSH">DHAUNSH</option>
+            </select>
+            <label for="favHeroine">Favorite Heroine:</label>
+            <select id="favHeroine" required>
+                <option value="" disabled selected>Select</option>
+                <option value="TAMANAH">TAMANAH</option>
+                <option value="SAMANTHA">SAMANTHA</option>
+                <option value="NAYANTHARA">NAYANTHARA</option>
+                <option value="PRIYA MOHAN">PRIYA MOHAN</option>
+                <option value="SUNNYLEONE">SUNNYLEONE</option>
+            </select>
+            <label for="favPlace">Favorite Place:</label>
+            <input type="text" id="favPlace" required>
+
+            <label for="favHobby">Favorite Hobby:</label>
+            <input type="text" id="favHobby" required>
+
+            <label for="favFood">Favorite Food:</label>
+            <input type="text" id="favFood" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <p id="twinMessage"></p>
+
+
+    <script src="TEST.js"></script>
+    <hr>
+    <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">CREATED BY AG</h1>
+</body>
+</html>
+
